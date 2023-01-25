@@ -32,9 +32,9 @@ function onInputEl(e) {
 				return;
 			}
 			renderCountryInfo(countries[0]);
-			
 		})
 		.catch(error => {
+			clearInfo();
 			Notify.failure('Oops, there is no country with that name');
 		});
 }
@@ -58,7 +58,6 @@ function renderCountryInfo({
 	`
 	refs.countryInfo.insertAdjacentHTML('beforeend', markup);
 }
-
 
 function renderCountryList(countries) {
 	const markup = countries.map(country => {
